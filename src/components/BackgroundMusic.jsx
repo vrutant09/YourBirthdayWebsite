@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const BackgroundMusic = ({ songsPreloaded = false, onMusicChoice }) => {
+const BackgroundMusic = ({ songsPreloaded = false, onMusicChoice, onSongsLoaded, isPreloadOnly = false }) => {
   const audioRef = useRef(null)
   const preloadRefs = useRef([])
   const [isPlaying, setIsPlaying] = useState(false)
@@ -39,8 +39,11 @@ const BackgroundMusic = ({ songsPreloaded = false, onMusicChoice }) => {
       
       const handleCanPlayThrough = () => {
         loadedCount++
+        console.log(`Song ${loadedCount}/${playlist.length} loaded`)
         if (loadedCount === playlist.length) {
           setAllSongsLoaded(true)
+          onSongsLoaded?.() // Notify parent that all songs are loaded
+          console.log('All songs preloaded!')
         }
       }
 
@@ -57,7 +60,7 @@ const BackgroundMusic = ({ songsPreloaded = false, onMusicChoice }) => {
         })
       }
     }
-  }, [songsPreloaded])
+  }, [songsPreloaded, onSongsLoaded])
 
   useEffect(() => {
     if (audioRef.current) {
@@ -83,6 +86,11 @@ const BackgroundMusic = ({ songsPreloaded = false, onMusicChoice }) => {
       }
     }
   }, [currentTrack])
+
+  // If this is preload-only mode, don't render the UI
+  if (isPreloadOnly) {
+    return null
+  }
 
   useEffect(() => {
     // Try to autoplay when component mounts

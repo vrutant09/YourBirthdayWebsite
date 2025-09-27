@@ -44,7 +44,12 @@ function App() {
   const [musicChoiceMade, setMusicChoiceMade] = useState(false)
 
   const handleLoadingComplete = () => {
+    // Don't complete loading until songs are actually preloaded
     setSongsPreloaded(true)
+  }
+
+  const handleSongsPreloaded = () => {
+    // Now that songs are loaded, we can hide the loading screen
     setIsLoading(false)
   }
 
@@ -61,11 +66,21 @@ function App() {
     <Router>
       <div className="App">
         {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+        {/* Hidden component that starts preloading when loading screen triggers */}
+        {songsPreloaded && isLoading && (
+          <BackgroundMusic 
+            songsPreloaded={true} 
+            onSongsLoaded={handleSongsPreloaded}
+            onMusicChoice={handleMusicChoice}
+            isPreloadOnly={true}
+          />
+        )}
         {!isLoading && (
           <>
             <BackgroundMusic 
-              songsPreloaded={songsPreloaded} 
+              songsPreloaded={true} 
               onMusicChoice={handleMusicChoice}
+              isPreloadOnly={false}
             />
             <ConfettiAnimation 
               show={showConfetti} 
