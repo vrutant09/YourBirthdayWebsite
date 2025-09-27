@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const BackgroundMusic = () => {
+const BackgroundMusic = ({ songsPreloaded = false, onMusicChoice }) => {
   const audioRef = useRef(null)
+  const preloadRefs = useRef([])
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTrack, setCurrentTrack] = useState(0)
   const [showMusicPrompt, setShowMusicPrompt] = useState(true)
   const [volume, setVolume] = useState(0.6)
+  const [allSongsLoaded, setAllSongsLoaded] = useState(false)
 
   const playlist = [
     {
@@ -22,6 +24,40 @@ const BackgroundMusic = () => {
       src: "/Music/Soda Pop.mp3"
     }
   ]
+
+  // Preload all songs
+  useEffect(() => {
+    if (songsPreloaded) {
+      // Create audio elements for preloading
+      preloadRefs.current = playlist.map((song, index) => {
+        const audio = new Audio(song.src)
+        audio.preload = 'auto'
+        return audio
+      })
+
+      let loadedCount = 0
+      
+      const handleCanPlayThrough = () => {
+        loadedCount++
+        if (loadedCount === playlist.length) {
+          setAllSongsLoaded(true)
+        }
+      }
+
+      // Add event listeners for all songs
+      preloadRefs.current.forEach(audio => {
+        audio.addEventListener('canplaythrough', handleCanPlayThrough)
+        audio.load()
+      })
+
+      return () => {
+        // Cleanup
+        preloadRefs.current.forEach(audio => {
+          audio.removeEventListener('canplaythrough', handleCanPlayThrough)
+        })
+      }
+    }
+  }, [songsPreloaded])
 
   useEffect(() => {
     if (audioRef.current) {
@@ -74,6 +110,7 @@ const BackgroundMusic = () => {
         await audioRef.current.play()
         setIsPlaying(true)
         setShowMusicPrompt(false)
+        onMusicChoice?.() // Trigger confetti animation
       } catch (error) {
         console.error('Error playing audio:', error)
       }
@@ -154,7 +191,10 @@ const BackgroundMusic = () => {
                   🎶 Yes, Play Music
                 </button>
                 <button
-                  onClick={() => setShowMusicPrompt(false)}
+                  onClick={() => {
+                    setShowMusicPrompt(false)
+                    onMusicChoice?.() // Trigger confetti animation
+                  }}
                   className="w-full bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-all duration-300"
                 >
                   Maybe Later

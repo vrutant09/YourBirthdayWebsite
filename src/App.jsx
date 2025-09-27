@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+import LoadingScreen from './components/LoadingScreen'
+import ConfettiAnimation from './components/ConfettiAnimation'
 import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
 import BackgroundMusic from './components/BackgroundMusic'
@@ -36,12 +38,43 @@ const AnimatedRoutes = () => {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+  const [songsPreloaded, setSongsPreloaded] = useState(false)
+  const [showConfetti, setShowConfetti] = useState(false)
+  const [musicChoiceMade, setMusicChoiceMade] = useState(false)
+
+  const handleLoadingComplete = () => {
+    setSongsPreloaded(true)
+    setIsLoading(false)
+  }
+
+  const handleMusicChoice = () => {
+    setMusicChoiceMade(true)
+    setShowConfetti(true)
+  }
+
+  const handleConfettiComplete = () => {
+    setShowConfetti(false)
+  }
+
   return (
     <Router>
       <div className="App">
-        <BackgroundMusic />
-        <ScrollToTop />
-        <AnimatedRoutes />
+        {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+        {!isLoading && (
+          <>
+            <BackgroundMusic 
+              songsPreloaded={songsPreloaded} 
+              onMusicChoice={handleMusicChoice}
+            />
+            <ConfettiAnimation 
+              show={showConfetti} 
+              onComplete={handleConfettiComplete} 
+            />
+            <ScrollToTop />
+            <AnimatedRoutes />
+          </>
+        )}
       </div>
     </Router>
   )
