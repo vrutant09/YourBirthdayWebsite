@@ -43,59 +43,29 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         transition={{ duration: 0.8 }}
         className="fixed inset-0 bg-gradient-to-br from-pink-400 via-purple-300 to-pink-300 flex items-center justify-center z-50"
       >
-        {/* Animated Background Elements */}
+        {/* Lightweight Background Effects with CSS */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Floating Hearts */}
-          {[...Array(12)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ 
-                x: Math.random() * window.innerWidth, 
-                y: window.innerHeight + 100,
-                rotate: 0 
-              }}
-              animate={{ 
-                y: -100,
-                rotate: 360,
-                x: Math.random() * window.innerWidth
-              }}
-              transition={{
-                duration: Math.random() * 8 + 10,
-                repeat: Infinity,
-                ease: "linear",
-                delay: Math.random() * 5
-              }}
-              className="absolute text-pink-200 text-opacity-60"
-              style={{ fontSize: Math.random() * 20 + 20 }}
-            >
-              💖
-            </motion.div>
-          ))}
+          {/* Floating geometric shapes instead of emojis */}
+          <div className="floating-shapes">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className={`floating-shape floating-shape-${i + 1}`}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                  animationDuration: `${8 + Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
 
-          {/* Floating Sparkles */}
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={`sparkle-${i}`}
-              initial={{ 
-                x: Math.random() * window.innerWidth, 
-                y: Math.random() * window.innerHeight,
-                scale: 0
-              }}
-              animate={{ 
-                scale: [0, 1, 0],
-                rotate: [0, 180, 360]
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 3
-              }}
-              className="absolute text-white text-opacity-50"
-              style={{ fontSize: Math.random() * 15 + 10 }}
-            >
-              ✨
-            </motion.div>
-          ))}
+          {/* Animated gradient orbs */}
+          <div className="gradient-orbs">
+            <div className="gradient-orb orb-1" />
+            <div className="gradient-orb orb-2" />
+            <div className="gradient-orb orb-3" />
+          </div>
         </div>
 
         {/* Main Loading Content */}
@@ -147,7 +117,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             ))}
           </div>
 
-          {/* Pulsing Ring */}
+          {/* Simple Pulsing Ring */}
           <motion.div
             animate={{
               scale: [1, 1.2, 1],
@@ -160,17 +130,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             }}
             className="w-32 h-32 border-4 border-white border-opacity-50 rounded-full mx-auto mb-8 flex items-center justify-center"
           >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="text-4xl"
-            >
-              💫
-            </motion.div>
+            <div className="spinning-star">✨</div>
           </motion.div>
 
           {/* Completion Message */}
@@ -187,6 +147,95 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             )}
           </AnimatePresence>
         </div>
+
+        {/* Add CSS styles */}
+        <style jsx>{`
+          .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+
+          .floating-shape {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            border-radius: 50%;
+            animation: float-up linear infinite;
+          }
+
+          .floating-shape-1 { border-radius: 0; transform: rotate(45deg); }
+          .floating-shape-2 { border-radius: 0; }
+          .floating-shape-3 { width: 15px; height: 15px; }
+          .floating-shape-4 { width: 25px; height: 25px; border-radius: 0; transform: rotate(45deg); }
+          .floating-shape-5 { width: 18px; height: 18px; }
+          .floating-shape-6 { border-radius: 0; transform: rotate(45deg); }
+          .floating-shape-7 { width: 22px; height: 22px; }
+          .floating-shape-8 { width: 16px; height: 16px; border-radius: 0; }
+
+          @keyframes float-up {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+          }
+
+          .gradient-orbs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+
+          .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: float-orb 8s ease-in-out infinite;
+          }
+
+          .orb-1 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.3) 0%, transparent 70%);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+          }
+
+          .orb-2 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, transparent 70%);
+            top: 60%;
+            right: 15%;
+            animation-delay: -3s;
+          }
+
+          .orb-3 {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.2) 0%, transparent 70%);
+            bottom: 30%;
+            left: 60%;
+            animation-delay: -6s;
+          }
+
+          @keyframes float-orb {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+          }
+
+          .spinning-star {
+            animation: spin 3s linear infinite;
+            font-size: 2rem;
+          }
+
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </motion.div>
     </AnimatePresence>
   )
