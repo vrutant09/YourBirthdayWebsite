@@ -14,7 +14,7 @@ const Home = () => {
         <div className="text-center max-w-7xl mx-auto space-y-24 px-4">
           
           {/* Main Birthday Title */}
-          <ScrollReveal delay={300}>
+          <ScrollReveal delay={150}>
             <div className="space-y-8 pt-20">
               <h1 className="birthday-title leading-tight">
                 Happy Birthday Giasemoula ❤️
@@ -26,7 +26,7 @@ const Home = () => {
           </ScrollReveal>
           
           {/* Heart decoration with floating animations */}
-          <ScrollReveal delay={600}>
+          <ScrollReveal delay={300}>
             <div className="flex justify-center space-x-8 text-8xl py-12">
               <span className="floating-flower text-pink-400">💕</span>
               <span className="floating-flower text-rose-400 animation-delay-1000">🌹</span>
@@ -58,7 +58,7 @@ const Home = () => {
                 </ScrollReveal>
                 
                 {/* Large spacing with floating flowers */}
-                <ScrollReveal delay={800}>
+                <ScrollReveal delay={750}>
                   <div className="flex justify-center space-x-12 py-16">
                     <span className="floating-flower text-6xl">🌺</span>
                     <span className="floating-flower text-6xl animation-delay-1000">🌸</span>
@@ -66,7 +66,7 @@ const Home = () => {
                   </div>
                 </ScrollReveal>
                 
-                <ScrollReveal delay={1000}>
+                <ScrollReveal delay={900}>
                   <p className="letter-paragraph">
                     You are the most amazing person I know - your kindness touches everyone around you, your strength 
                     inspires me daily, and your beautiful soul makes this world a brighter place. Every day with you 
@@ -74,14 +74,14 @@ const Home = () => {
                   </p>
                 </ScrollReveal>
                 
-                <ScrollReveal delay={1200}>
+                <ScrollReveal delay={1050}>
                   <div className="flex justify-center space-x-8 py-16">
                     <span className="floating-flower text-7xl">💝</span>
                     <span className="floating-flower text-7xl animation-delay-1500">✨</span>
                   </div>
                 </ScrollReveal>
                 
-                <ScrollReveal delay={1400}>
+                <ScrollReveal delay={1200}>
                   <p className="letter-paragraph">
                     I've created something special for you today - a journey through your name that celebrates all 
                     the wonderful qualities that make you uniquely you. Each letter represents something beautiful 
@@ -89,7 +89,7 @@ const Home = () => {
                   </p>
                 </ScrollReveal>
                 
-                <ScrollReveal delay={1600}>
+                <ScrollReveal delay={1350}>
                   <p className="letter-paragraph">
                     So take my hand (virtually for now), and let's walk through this celebration of YOU. 
                     Because today, and every day, you deserve to know just how extraordinary you are.
@@ -97,7 +97,7 @@ const Home = () => {
                 </ScrollReveal>
               </div>
               
-              <ScrollReveal delay={1800}>
+              <ScrollReveal delay={1500}>
                 <p className="font-dancing text-3xl md:text-4xl lg:text-5xl text-pink-700 pt-12">
                   With all my love and birthday wishes,<br />
                   Your devoted partner ❤️
@@ -110,7 +110,7 @@ const Home = () => {
           <div className="h-40"></div>
           
           {/* Continue Button */}
-          <ScrollReveal delay={2000}>
+          <ScrollReveal delay={1650}>
             <div className="pb-20">
               <button 
                 onClick={() => navigate('/J')}
@@ -122,7 +122,7 @@ const Home = () => {
           </ScrollReveal>
           
           {/* Bottom decoration */}
-          <ScrollReveal delay={2200}>
+          <ScrollReveal delay={1800}>
             <div className="flex justify-center space-x-8 text-6xl pb-20">
               <span className="floating-flower">🎂</span>
               <span className="floating-flower animation-delay-300">🎉</span>

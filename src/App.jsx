@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence } from 'framer-motion'
 import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
+import BackgroundMusic from './components/BackgroundMusic'
 import Home from './pages/Home'
 import J from './pages/J'
 import A from './pages/A'
@@ -38,6 +39,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <BackgroundMusic />
         <ScrollToTop />
         <AnimatedRoutes />
       </div>
