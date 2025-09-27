@@ -12,16 +12,16 @@ const BackgroundMusic = ({ songsPreloaded = false, onMusicChoice, onSongsLoaded,
 
   const playlist = [
     {
-      name: "Cupid - Twin Version",
-      src: "/Music/Cupid - Twin Version.mp3"
+      name: "All of Me",
+      src: "/Music/All of Me.mp3"
     },
     {
-      name: "Renai Circulation (English Cover)",
-      src: "/Music/Renai Circulation (English Cover) [Full Version].mp3"
+      name: "Angel Baby",
+      src: "/Music/Angel Baby.mp3"
     },
     {
-      name: "Soda Pop",
-      src: "/Music/Soda Pop.mp3"
+      name: "Till Forever Falls Apart",
+      src: "/Music/Till Forever Falls Apart.mp3"
     }
   ]
 
