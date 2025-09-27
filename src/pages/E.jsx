@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 const E = () => {
   const content = `My Extraordinary Jasmine,
 
-E is for EXTRAORDINARY - and that's exactly what you are. You are extraordinary in every single way. In a world full of ordinary, you shine as something truly special and unique.
+E is for EXTRAORDINARY - In a world full of ordinary, you shine as something truly special and unique.
 
 You are extraordinary not because you're perfect, but because you're perfectly you. You're extraordinary because of the way you love, the way you laugh, the way you see beauty in unexpected places, and the way you make everyone around you feel special.
 

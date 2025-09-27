@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 const M = () => {
   const content = `My Magnificent Jasmine,
 
-M stands for MAGNIFICENT - and that's exactly what you are. You are magnificent in every sense of the word. Your beauty, both inside and out, is truly magnificent. Your heart, your mind, your spirit - everything about you is grand and wonderful and absolutely magnificent.
+M stands for MAGNIFICENT - You are magnificent in every sense of the word. Your beauty, both inside and out, is truly magnificent. Your heart, your mind, your spirit - everything about you is grand and wonderful and absolutely magnificent.
 
 You have a magnificent way of making everyone around you feel special and valued. You have a magnificent ability to bring out the best in people. You have magnificent dreams and the magnificent courage to pursue them.
 

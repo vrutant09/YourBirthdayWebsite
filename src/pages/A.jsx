@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 const A = () => {
   const content = `My Amazing Jasmine,
 
-A is for AMAZING - which is exactly what you are in every possible way. You constantly amaze me with your intelligence, your creativity, your compassion, and your incredible ability to make everything better just by being present.
+A is for AMAZING - You constantly amaze me with your intelligence, your creativity, your compassion, and your incredible ability to make everything better just by being present.
 
 You amaze me with how you handle challenges with such grace and strength. You amaze me with your ability to see the best in people, even when they don't see it in themselves. You amaze me with your talents, your dreams, and the way you pursue them with such determination.
 

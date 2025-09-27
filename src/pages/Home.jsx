@@ -17,7 +17,7 @@ const Home = () => {
           <ScrollReveal delay={300}>
             <div className="space-y-8 pt-20">
               <h1 className="birthday-title leading-tight">
-                Happy Birthday Giasemoula ❤️
+                Happy Birthday Giasemoula, My Pastelia.. ❤️
               </h1>
               <div className="text-4xl md:text-5xl lg:text-6xl font-dancing text-pink-600">
                 My dearest love, today is all about celebrating you
@@ -44,12 +44,15 @@ const Home = () => {
               
               <ScrollReveal delay={400}>
                 <p className="text-4xl md:text-5xl lg:text-6xl font-dancing text-pink-700 mb-12">
-                  My Beautiful Giasemoula,
+                  My Beautiful Giasemi,
                 </p>
               </ScrollReveal>
               
               <div className="space-y-20">
                 <ScrollReveal delay={600}>
+                  <p className="letter-paragraph">
+                    I don’t really know where to begin, because every year with you feels like both a lifetime and a single heartbeat. When I sit here, trying to gather words, I feel them stumble over each other, never quite good enough… but I hope you can feel my hands reaching for you through every line.
+                  </p>
                   <p className="letter-paragraph">
                     Today marks another year of your incredible journey through life, and I couldn't be more grateful 
                     to be part of it. As I sit here thinking about all the moments we've shared, all the laughter, 

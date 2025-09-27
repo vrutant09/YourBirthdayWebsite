@@ -111,7 +111,7 @@ const Final = () => {
                 onClick={() => navigate('/')}
                 className="nav-button bg-gradient-to-r from-pink-400 to-rose-500"
               >
-                Read It All Again 🥰
+                Read It All Again 
               </button>
               <button 
                 onClick={() => window.print()}

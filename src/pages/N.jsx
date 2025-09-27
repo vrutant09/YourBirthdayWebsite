@@ -7,7 +7,7 @@ const N = () => {
 
 N is for NURTURING - one of your most beautiful qualities. You have the most nurturing heart I've ever known. You care for others with such tenderness and attention, making everyone around you feel loved, supported, and valued.
 
-You nurture dreams - both your own and those of the people you care about. You encourage growth, you celebrate progress, and you provide the support needed for things to flourish. Just like a garden thrives under loving care, everything and everyone in your life blooms because of your nurturing nature.
+You nurture dreams - both your own and those of the people you care about. You encourage growth, you celebrate progress, and you provide the support needed for things to flourish, this word flourish i know i took way too long to come up with it, but it really resembles with what you are and how you are. Just like a garden thrives under loving care, everything and everyone in your life blooms because of your nurturing nature.
 
 You nurture relationships with such care and intention. You remember the little things, you check in on people, you offer comfort when it's needed, and you celebrate joys with genuine happiness. You make people feel seen and heard and important.
 
